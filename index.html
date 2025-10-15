@@ -6,10 +6,9 @@
   <title>Rohman Hadi</title>
 
   <!-- Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome (ikon media sosial & tema) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
@@ -17,16 +16,16 @@
       --text-color: #333;
       --subtext-color: #555;
       --card-bg: #f5f5f5;
-      --hover-bg: #eeeeee;
-      --border-color: #ddd;
+      --hover-bg: #eaeaea;
+      --border-color: #eee;
       --footer-color: #aaa;
     }
 
     [data-theme="dark"] {
-      --bg-color: #0f0f0f;
-      --text-color: #f5f5f5;
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
       --subtext-color: #ccc;
-      --card-bg: #1a1a1a;
+      --card-bg: #1e1e1e;
       --hover-bg: #2a2a2a;
       --border-color: #333;
       --footer-color: #777;
@@ -34,7 +33,7 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background-color: var(--bg-color);
+      background: var(--bg-color);
       color: var(--text-color);
       display: flex;
       flex-direction: column;
@@ -43,9 +42,17 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
+      animation: fadeIn 1s ease-in-out;
     }
 
+    /* Fade-in effect */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Theme toggle button */
     .theme-toggle {
       position: absolute;
       top: 20px;
@@ -53,10 +60,9 @@
       background: var(--card-bg);
       color: var(--text-color);
       border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 10px 14px;
+      padding: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      font-size: 18px;
       transition: all 0.3s ease;
     }
 
@@ -101,16 +107,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
       background: var(--card-bg);
       color: var(--text-color);
       text-decoration: none;
       padding: 12px 24px;
       border-radius: 12px;
-      width: 250px;
       border: 1px solid var(--border-color);
-      transition: all 0.2s ease-in-out;
+      width: 250px;
       font-weight: 500;
-      gap: 10px;
+      transition: all 0.25s ease-in-out;
     }
 
     .links a:hover {
@@ -126,59 +132,48 @@
   </style>
 </head>
 <body>
-  <!-- Tombol ganti tema -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
     <i class="fa-solid fa-moon"></i>
   </button>
 
-  <img src="rohman.jpg" alt="Rohman Hadi" class="profile" />
+  <img src="rohman.jpg" alt="Rohman Hadi" class="profile">
   <h1>Rohman Hadi</h1>
   <p>A simple person who loves coffee ☕</p>
 
   <div class="links">
-    <a href="https://instagram.com/a.rohmanhadi" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a href="https://facebook.com/a.rohmanhadi" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook
-    </a>
-    <a href="https://t.me/rohmanhadi" target="_blank">
-      <i class="fab fa-telegram"></i> Telegram
-    </a>
-    <a href="https://youtube.com/@rohmanhadi14" target="_blank">
-      <i class="fab fa-youtube"></i> YouTube
-    </a>
-    <a href="https://discord.gg/rohmanhadi" target="_blank">
-      <i class="fab fa-discord"></i> Discord
-    </a>
-    <a href="https://kick.com/rohmanhadi" target="_blank">
-      <i class="fas fa-gamepad"></i> Kick
-    </a>
+    <a href="https://instagram.com/a.rohmanhadi" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://facebook.com/a.rohmanhadi" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="https://t.me/rohmanhadi" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+    <a href="https://youtube.com/@rohmanhadi14" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="https://discord.gg/rohmanhadi" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+    <a href="https://kick.com/rohmanhadi" target="_blank"><i class="fa-solid fa-gamepad"></i> Kick</a>
   </div>
 
-  <footer>© 2025 Rohman Hadi</footer>
+  <footer>
+    © 2025 Rohman Hadi
+  </footer>
 
   <script>
-    const toggleButton = document.getElementById('themeToggle');
-    const body = document.body;
-    const icon = toggleButton.querySelector('i');
+    const toggleButton = document.getElementById("themeToggle");
+    const icon = toggleButton.querySelector("i");
+    const savedTheme = localStorage.getItem("theme");
 
-    // Cek tema tersimpan
-    if (localStorage.getItem('theme') === 'dark') {
-      body.setAttribute('data-theme', 'dark');
-      icon.classList.replace('fa-moon', 'fa-sun');
+    // Apply saved theme
+    if (savedTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      icon.classList.replace("fa-moon", "fa-sun");
     }
 
-    toggleButton.addEventListener('click', () => {
-      const isDark = body.getAttribute('data-theme') === 'dark';
+    toggleButton.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
       if (isDark) {
-        body.removeAttribute('data-theme');
-        icon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'light');
+        document.documentElement.removeAttribute("data-theme");
+        icon.classList.replace("fa-sun", "fa-moon");
+        localStorage.setItem("theme", "light");
       } else {
-        body.setAttribute('data-theme', 'dark');
-        icon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'dark');
+        document.documentElement.setAttribute("data-theme", "dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+        localStorage.setItem("theme", "dark");
       }
     });
   </script>
