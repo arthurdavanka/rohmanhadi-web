@@ -151,5 +151,36 @@
     <a href="https://discord.gg/rohmanhadi" target="_blank">
       <i class="fab fa-discord"></i> Discord
     </a>
-    <a href="
-      
+    <a href="https://kick.com/rohmanhadi" target="_blank">
+      <i class="fas fa-gamepad"></i> Kick
+    </a>
+  </div>
+
+  <footer>© 2025 Rohman Hadi</footer>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = toggleButton.querySelector('i');
+
+    // Cek tema tersimpan
+    if (localStorage.getItem('theme') === 'dark') {
+      body.setAttribute('data-theme', 'dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggleButton.addEventListener('click', () => {
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        body.removeAttribute('data-theme');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
