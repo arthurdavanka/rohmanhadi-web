@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rohman Hadi</title>
+
+  <!-- Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333;
+      --subtext-color: #555;
+      --card-bg: #f5f5f5;
+      --hover-bg: #eaeaea;
+      --border-color: #eee;
+      --footer-color: #aaa;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #f1f1f1;
+        --subtext-color: #ccc;
+        --card-bg: #1e1e1e;
+        --hover-bg: #2a2a2a;
+        --border-color: #333;
+        --footer-color: #777;
+      }
+    }
+
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #ffffff;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -16,44 +45,71 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
+      transition: background 0.3s ease, color 0.3s ease;
     }
+
     img.profile {
       width: 160px;
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
       margin-bottom: 20px;
     }
+
     h1 {
       font-size: 28px;
       margin: 0;
     }
+
     p {
       font-size: 16px;
       margin: 8px 0 24px;
-      color: #555;
+      color: var(--subtext-color);
     }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
     .links a {
-      display: block;
-      background: #f5f5f5;
-      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--card-bg);
+      color: var(--text-color);
       text-decoration: none;
-      margin: 8px 0;
       padding: 12px 24px;
       border-radius: 12px;
       width: 250px;
+      border: 1px solid var(--border-color);
       transition: all 0.2s ease-in-out;
-      border: 1px solid #eee;
+      font-weight: 500;
     }
+
     .links a:hover {
-      background: #eaeaea;
+      background: var(--hover-bg);
       transform: translateY(-2px);
     }
+
+    .links i {
+      font-size: 18px;
+      color: var(--subtext-color);
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover i {
+      color: var(--text-color);
+    }
+
     footer {
       margin-top: 40px;
       font-size: 13px;
-      color: #aaa;
+      color: var(--footer-color);
     }
   </style>
 </head>
@@ -61,33 +117,32 @@
 
   <img src="rohman.jpg" alt="Rohman Hadi" class="profile">
   <h1>Rohman Hadi</h1>
-  <p>A simple person who loves coffee</p>
+  <p>A simple person who loves coffee ☕</p>
 
   <div class="links">
-    <a href="https://instagram.com/a.rohmanhadi" target="_blank">Instagram</a>
-    <a href="https://facebook.com/a.rohmanhadi" target="_blank">Facebook</a>
-    <a href="https://t.me/rohmanhadi" target="_blank">Telegram</a>
-    <a href="https://youtube.com/@rohmanhadi14" target="_blank">YouTube</a>
-    <a href="https://discord.gg/rohmanhadi" target="_blank">Discord</a>
-    <a href="https://kick.com/rohmanhadi" target="_blank">Kick</a>
+    <a href="https://instagram.com/a.rohmanhadi" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://facebook.com/a.rohmanhadi" target="_blank">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://t.me/rohmanhadi" target="_blank">
+      <i class="fab fa-telegram"></i> Telegram
+    </a>
+    <a href="https://youtube.com/@rohmanhadi14" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+    <a href="https://discord.gg/rohmanhadi" target="_blank">
+      <i class="fab fa-discord"></i> Discord
+    </a>
+    <a href="https://kick.com/rohmanhadi" target="_blank">
+      <i class="fas fa-gamepad"></i> Kick
+    </a>
   </div>
 
   <footer>
     © 2025 Rohman Hadi
   </footer>
 
-</body>
-</html>
-
-
-<html>
-<head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Hello, World!</title>
-</head>
-<body>
-  <h1>
-    Hello, World!
-  </h1>
 </body>
 </html>
