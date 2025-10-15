@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohman Hadi</title>
 
   <!-- Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome (ikon media sosial & tema) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     :root {
@@ -17,26 +17,24 @@
       --text-color: #333;
       --subtext-color: #555;
       --card-bg: #f5f5f5;
-      --hover-bg: #eaeaea;
-      --border-color: #eee;
+      --hover-bg: #eeeeee;
+      --border-color: #ddd;
       --footer-color: #aaa;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-color: #121212;
-        --text-color: #f1f1f1;
-        --subtext-color: #ccc;
-        --card-bg: #1e1e1e;
-        --hover-bg: #2a2a2a;
-        --border-color: #333;
-        --footer-color: #777;
-      }
+    [data-theme="dark"] {
+      --bg-color: #0f0f0f;
+      --text-color: #f5f5f5;
+      --subtext-color: #ccc;
+      --card-bg: #1a1a1a;
+      --hover-bg: #2a2a2a;
+      --border-color: #333;
+      --footer-color: #777;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg-color);
       color: var(--text-color);
       display: flex;
       flex-direction: column;
@@ -45,7 +43,26 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: var(--hover-bg);
+      transform: scale(1.05);
     }
 
     img.profile {
@@ -53,8 +70,13 @@
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    img.profile:hover {
+      transform: scale(1.05);
     }
 
     h1 {
@@ -71,15 +93,14 @@
     .links {
       display: flex;
       flex-direction: column;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
     }
 
     .links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       background: var(--card-bg);
       color: var(--text-color);
       text-decoration: none;
@@ -89,21 +110,12 @@
       border: 1px solid var(--border-color);
       transition: all 0.2s ease-in-out;
       font-weight: 500;
+      gap: 10px;
     }
 
     .links a:hover {
       background: var(--hover-bg);
       transform: translateY(-2px);
-    }
-
-    .links i {
-      font-size: 18px;
-      color: var(--subtext-color);
-      transition: color 0.3s ease;
-    }
-
-    .links a:hover i {
-      color: var(--text-color);
     }
 
     footer {
@@ -114,8 +126,12 @@
   </style>
 </head>
 <body>
+  <!-- Tombol ganti tema -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
-  <img src="rohman.jpg" alt="Rohman Hadi" class="profile">
+  <img src="rohman.jpg" alt="Rohman Hadi" class="profile" />
   <h1>Rohman Hadi</h1>
   <p>A simple person who loves coffee ☕</p>
 
@@ -135,14 +151,5 @@
     <a href="https://discord.gg/rohmanhadi" target="_blank">
       <i class="fab fa-discord"></i> Discord
     </a>
-    <a href="https://kick.com/rohmanhadi" target="_blank">
-      <i class="fas fa-gamepad"></i> Kick
-    </a>
-  </div>
-
-  <footer>
-    © 2025 Rohman Hadi
-  </footer>
-
-</body>
-</html>
+    <a href="
+      
