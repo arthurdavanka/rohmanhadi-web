@@ -153,22 +153,9 @@
       to { transform: scale(4); opacity: 0; }
     }
 
-    /* 🎮 Animasi ikon platform video */
-    @keyframes bounceIcon {
-      0%, 100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-4px) rotate(-5deg); }
-    }
-
-    .links a.twitch:hover i,
-    .links a.youtube:hover i,
-    .links a.tiktok:hover i {
-      animation: bounceIcon 0.4s ease-in-out;
-    }
-
+    /* ✨ Ikon animasi ringan (tanpa bounce) */
     .links a i { transition: transform 0.4s ease; }
-    .links a:hover i:not(.fa-twitch):not(.fa-youtube):not(.fa-tiktok) {
-      transform: rotate(12deg) scale(1.25);
-    }
+    .links a:hover i { transform: rotate(12deg) scale(1.25); }
 
     footer { margin-top: 40px; font-size: 12px; color: var(--footer-color); }
 
